@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Welcome,</h1>
+    <h2>Please Enter A Car</h2>
+    <form action="">
+      <select name="" id="select_car" onchange="displayForm()">
+        <option value="normal">Normal Car</option>
+        <option value="sport">Sport Car</option>
+        <option value="SUV">SUV Car</option>
+        <option value="Boat">Boat</option>
+      </select>
+      <label for="">Enter Wheels Number: </label>
+      <input id="wheels_input" type="number" />
+      <label for="">Enter Engine Volume: </label>
+      <input id="engine_input" type="number" />
+      <label for="">Enter Vehicle Color: </label>
+      <input id="color_input" type="color" />
+      <label style="display: none" id="name_label" for=""
+        >Enter Vehicle Name:
+      </label>
+      <input style="display: none" id="name_input" type="text" />
+      <button id="submit_btn">SUBMIT</button>
+    </form>
+    <table>
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+    <script src="main.js"></script>
+  </body>
+</html>
