@@ -48,9 +48,9 @@ class SUVCar extends Car {
   }
 }
 class Boat extends Car {
-  constructor(wheelsNumber, engineVolume, boatColor, boatName) {
+  constructor(wheelsNumber, engineVolume, boatColor, carName) {
     super(wheelsNumber, engineVolume, boatColor);
-    this.boatName = boatName;
+    this.carName = carName;
   }
   getCarDetails() {
     return `Car Name:${this.carName} \n` + super.getCarDetails();
@@ -80,7 +80,7 @@ function submitCar() {
         +wheels_input.value,
         +engine_input.value,
         color_input.value,
-        name_input
+        name_input.value
       );
       break;
     case "SUV":
@@ -88,7 +88,7 @@ function submitCar() {
         +wheels_input.value,
         +engine_input.value,
         color_input.value,
-        name_input
+        name_input.value
       );
       break;
     default:
@@ -96,10 +96,32 @@ function submitCar() {
         +wheels_input.value,
         +engine_input.value,
         color_input.value,
-        name_input
+        name_input.value
       );
       break;
   }
+  return newCar;
 }
-let carsbb = new boat();
-function createTableLine() {}
+function createTableLine() {
+  if (t_headers.innerHTML == "") {
+    createTableHeader();
+  }
+  const vehicle = submitCar();
+  let line = document.createElement("tr");
+  for (let key in vehicle) {
+    line.innerHTML += `<td>${vehicle[key]}</td>`;
+  }
+  if (vehicle["carName"] == undefined) {
+    line.innerHTML += "<td>None</td>";
+  }
+  table_body.appendChild(line);
+  return false;
+}
+function createTableHeader() {
+  let tHeaders = ["Wheels Number", "Engine Volume", "Color", "Vehicle Name"];
+  tHeaders.forEach((theader) => {
+    let header = document.createElement("th");
+    header.innerText = theader;
+    t_headers.appendChild(header);
+  });
+}

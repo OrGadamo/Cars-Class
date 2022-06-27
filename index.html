@@ -10,7 +10,7 @@
   <body>
     <h1>Welcome,</h1>
     <h2>Please Enter A Car</h2>
-    <form action="">
+    <form action=" " onsubmit=" return createTableLine()">
       <select name="" id="select_car" onchange="displayForm()">
         <option value="normal">Normal Car</option>
         <option value="sport">Sport Car</option>
@@ -27,11 +27,11 @@
         >Enter Vehicle Name:
       </label>
       <input style="display: none" id="name_input" type="text" />
-      <button id="submit_btn">SUBMIT</button>
+      <button id="submit_btn" onclick="">SUBMIT</button>
     </form>
     <table>
-      <thead></thead>
-      <tbody></tbody>
+      <thead id="t_headers"></thead>
+      <tbody id="table_body"></tbody>
     </table>
     <script src="main.js"></script>
   </body>
